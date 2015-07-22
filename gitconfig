@@ -1,4 +1,3 @@
-[push]
-	default = matching
-[core]
-	trustctime = false
+[user]
+	name = Johnny Kaps
+	email = johnny.kaps@gov.ab.ca
