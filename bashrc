@@ -19,6 +19,8 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 
 [[ "$-" != *i* ]] && return
 
+eval $(ssh-agent -s)
+ssh-add.exe ~/.ssh/jk_gh_console2
 
 # Aliases
 if [ -f "${HOME}/.bash_aliases" ]; then
