@@ -1,3 +1,5 @@
 [user]
 	name = Johnny Kaps
 	email = johnny.kaps@gov.ab.ca
+[push]
+	default = simple
