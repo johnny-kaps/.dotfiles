@@ -19,9 +19,9 @@ export PS1="${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[0m\]@\[\e[35m\]\h
 
 [[ "$-" != *i* ]] && return
 
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/jk_gh_xubuntu
-ssh-add ~/.ssh/jk_bb_xubuntu
+#eval $(ssh-agent -s)
+#ssh-add ~/.ssh/jk_gh_xubuntu
+#ssh-add ~/.ssh/jk_bb_xubuntu
 
 if [ -f "${HOME}/.bash_aliases" ]; then
   source "${HOME}/.bash_aliases"
