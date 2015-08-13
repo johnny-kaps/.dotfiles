@@ -43,7 +43,7 @@ if [ -d "/usr/share/nginx" ]; then
       bower install
       mkdir /home/fads/code/current/alex_client/.www
       gulp debug
-      ln -s /home/fads/code/current/alex_client/.www /usr/share/nginx/html
+      sudo ln -s /home/fads/code/current/alex_client/.www /usr/share/nginx/html
       echo "Installation complete. Docker container aj is ready."
     fi
   fi
