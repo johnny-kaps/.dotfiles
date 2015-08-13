@@ -16,6 +16,7 @@
 
 export PATH=$PATH:$HOME/bin
 export PS1="${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]|\[\e[36m\]\w\[\e[33m\]>\[\e[0m\]"
+export TERM=xterm
 
 [[ "$-" != *i* ]] && return
 
@@ -49,3 +50,11 @@ if [ -d "/usr/share/nginx" ]; then
   fi
 fi
 
+if [ $HOSTNAME == "aj" ]; then
+  cd ${HOME}/code/current/alex_client/.lib
+  clear  
+  echo "Starting Karma"
+  karma start
+fi
+
+  
