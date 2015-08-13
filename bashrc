@@ -38,6 +38,7 @@ if [ -d "/usr/share/nginx" ]; then
   echo "NGINX HTML directory Detected"
     if [ ! -L "/usr/share/nginx/html" ]; then
       echo "Installing missing components to use with Docker container aj."
+      cd ${HOME}/code/current/alex_client/.lib
       npm install
       bower install
       mkdir /home/fads/code/current/alex_client/.www
