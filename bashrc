@@ -32,4 +32,19 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
   nvm use node
 fi
 
+if [ -d "/usr/share/nginx" ]; then
+  echo "NGINX Detected"
+  if [ ! -d "/usr/share/nginx/html" ]; then
+  echo "NGINX HTML directory Detected"
+    if [ ! -L "/usr/share/nginx/html" ]; then
+      echo "Installing missing components to use with Docker container aj."
+      docker exec -it --user fads aj npm install
+      docker exec -it --user fads aj bower install
+      docker exec -it --user fads aj mkdir /home/fads/code/current/alex_client/.www
+      docker exec -it --user fads aj gulp debug
+      docker exec -it --user root aj ln -s /home/fads/code/current/alex_client/.www /usr/share/nginx/html
+      echo "Installation complete. Docker container aj is ready."
+    fi
+  fi
+fi
 
