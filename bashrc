@@ -14,8 +14,10 @@
 #export DOCKER_TLS_VERIFY=1
 #export DOCKER_HOST=tcp://192.168.59.103:2376
 
+git_status='git rev-parse --abbrev-ref HEAD 2>/dev/null'
+
 export PATH=$PATH:$HOME/bin
-export PS1="${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]|\[\e[36m\]\w\[\e[33m\]>\[\e[0m\]"
+export PS1="${debian_chroot:+($debian_chroot)}\[\e[32m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\]|\[\e[36m\]\w\[\e[33m\]\$($git_status)>\[\e[0m\]"
 export TERM=xterm
 
 [[ "$-" != *i* ]] && return
